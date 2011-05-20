@@ -1,0 +1,3 @@
+Simple table soccer programm
+
+ to start: jruby -rubygems ts_league.rb
