@@ -1,6 +1,21 @@
 require 'sinatra'
+require 'haml'
+
+helpers do
+  def redis
+    @redis ||= Redis.new
+  end
+end
 
 
 get '/' do
-  "Hello World, Time is now #{Time.now} on the server"
+  @title = "TS League"
+  haml :index
+end
+
+
+post '/game' do
+
+
+
 end
