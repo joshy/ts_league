@@ -1,0 +1,10 @@
+%html
+  %body
+    %table
+      %tr
+        %th Nr
+        %th Players
+        - @games.each do |game|
+          %tr
+            %td = h(game.nr)  
+            %td = h(game.players)

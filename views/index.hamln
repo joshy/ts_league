@@ -1,0 +1,8 @@
+%html
+%body
+  %h1 current games
+  %ul
+    - @games.each do |game|
+      %li
+        "#{game}"
+
