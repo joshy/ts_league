@@ -1,0 +1,5 @@
+adapter: jdbcpostgresql
+host: localhost
+username: joshy
+password: joshy
+database: ts_league

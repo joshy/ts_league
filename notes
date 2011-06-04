@@ -1,0 +1,3 @@
+db connection string
+
+db = Sequel.connect 'jdbc:postgresql://127.0.0.1:5432/ts_league', :user=> 'joshy', :password =>'joshy'

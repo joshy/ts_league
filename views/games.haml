@@ -6,5 +6,5 @@
         %th Players
         - @games.each do |game|
           %tr
-            %td = h(game.nr)  
-            %td = h(game.players)
+            %td = #{game[:short_name]}  
+            %td = #{game[:games_won]}
