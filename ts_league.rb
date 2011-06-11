@@ -6,8 +6,7 @@ require 'Store'
 STORE = Store.new
 
 get '/' do
-  @title = "TS League"
-  haml :index
+  redirect '/games'
 end
 
 get '/games' do
@@ -15,16 +14,12 @@ get '/games' do
   haml :games
 end
 
-get '/game' do
-  haml :game
-end
-
 post '/game' do
-  player1 = params[:player1]
-  won1 = params[:won1]
-  print player1
-  print won1
-  game = Game.new(player1, won1) 
+  player = params[:player]
+  won = params[:won]
+  played = params[:played]
+  game = Game.new(player, won, played) 
   STORE.save(game)
+  redirect '/games'
 end
 

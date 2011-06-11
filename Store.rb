@@ -10,12 +10,18 @@ class Store
     @players = @db[:players]
   end
 
-  def save(game)
-    @players.insert(:short_name => game.player1, :games_won => game.won1) 
+  def save(games)
+    player = @players.where(:short_name => games.player).first
+    if player.nil?
+      @players.insert(:short_name => games.player, :games_won => games.won, :games_played => games.played) 
+    elsif
+      @players.where(:short_name => games.player)
+        .update(:games_won => :games_won + games.won, :games_played => :games_played + games.played)
+    end
   end
 
   def games
-    @players.all
+    @players.order(:games_won).reverse.all
   end
 
   def init_database
@@ -24,7 +30,6 @@ class Store
       String :short_name
       Integer :games_won
       Integer :games_played
-      Integer :games_lost
     end
   end
 

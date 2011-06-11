@@ -1,7 +1,7 @@
 class Game 
-  attr_reader :player1, :won1
-  def initialize(player1, won1)
-    @player1, @won1 = player1, won1
+  attr_reader :player, :won, :played
+  def initialize(player, won, played)
+    @player, @won, @played = player, won, played
   end
 end
 
