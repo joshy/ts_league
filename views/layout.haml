@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title NCA Table Soccer League
+    %link(rel = "stylesheet" href="css/grid.css")
+  %body
+    %script{:type => "text/javascript", :src  => "js/jquery-1.6.1.js"}
+    :javascript
+      $(document).ready(function() {
+        $('#input_form');
+        });
+    #content{:class => 'container container_12'}
+      =yield

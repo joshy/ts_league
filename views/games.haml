@@ -1,18 +1,15 @@
 %html
   %body
-    %div
+    %div{:id => "input_form", :class => "grid_8"}
       %form{ :action => "/game", :method => "post" }
-        %fieldset
-          %ul
-            %li
-              %label{:for => "player"} Player
-              %input{:type => "text", :name => "player", :class => "text"}
-              %label{:for => "won"} Games won
-              %input{:type => "text", :name => "won", :class => "text"}
-              %label{:for => "played"} Games played
-              %input{:type => "text", :name => "played", :class => "text"}
-                %input{:type => "submit", :value => "Save", :class => "button"}
-    %div{:class => '.container_12'}
+        %label{:for => "player"} Player
+        %input{:type => "text", :name => "player", :class => "text", :size => 3}
+        %label{:for => "won"} Games won
+        %input{:type => "text", :name => "won", :class => "text", :size => 2}
+        %label{:for => "played"} Games played
+        %input{:type => "text", :name => "played", :class => "text", :size => 2}
+          %input{:type => "submit", :value => "Save", :class => "button"}
+    %div{:class => 'grid_12'}
       %table{:id => 'games'}
         %tr
           %th{:scope => 'col'} Player
