@@ -390,6 +390,10 @@ body {
 	border-collapse: collapse;
 	text-align: left;
 }
+
+th.right, td.right {
+    text-align: right;
+}
 th
 {
 	font-size: 14px;

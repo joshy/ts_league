@@ -8,15 +8,17 @@
         %input{:type => "text", :name => "won", :class => "text", :size => 2}
         %label{:for => "played"} Games played
         %input{:type => "text", :name => "played", :class => "text", :size => 2}
-          %input{:type => "submit", :value => "Save", :class => "button"}
     %div{:class => 'grid_12'}
       %table{:id => 'games'}
         %tr
+          %th{:colspan => "4", :class => "right"}
+            %a(title="Enter game") Enter game
+        %tr
           %th{:scope => 'col'} Player
-          %th{:scope => 'col'} Games won
-          %th{:scope => 'col'} Games played
+          %th{:scope => 'col', :class => "right"} Games won
+          %th{:scope => 'col', :class => "right"} Games 
           - @games.each do |game|
             %tr
               %td #{game[:short_name]}  
-              %td #{game[:games_won]}
-              %td #{game[:games_played]}
+              %td{:class => "right"} #{game[:games_won]}
+              %td{:class => "right"} #{game[:games_played]}
