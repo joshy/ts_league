@@ -5,9 +5,10 @@
     %link(rel = "stylesheet" href="css/grid.css")
   %body
     %script{:type => "text/javascript", :src  => "js/jquery-1.6.1.js"}
+    %script{:type => "text/javascript", :src  => "js/default.js"}
     :javascript
       $(document).ready(function() {
-        $('#input_form').hide();
+        $('#game_form').hide();
         });
     #content{:class => 'container container_12'}
       =yield

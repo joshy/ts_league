@@ -1,6 +1,6 @@
 %html
   %body
-    %div{:id => "input_form", :class => "grid_8"}
+    %div{:id => "game_form", :class => "grid_8"}
       %form{ :action => "/game", :method => "post" }
         %label{:for => "player"} Player
         %input{:type => "text", :name => "player", :class => "text", :size => 3}
@@ -8,10 +8,11 @@
         %input{:type => "text", :name => "won", :class => "text", :size => 2}
         %label{:for => "played"} Games played
         %input{:type => "text", :name => "played", :class => "text", :size => 2}
+          %input{:type => "submit", :value => "Save", :class => "button", :onclick => "hideEnterGame()"}
     %div{:class => 'grid_12'}
       %table{:id => 'games'}
         %tr
-          %th{:colspan => "4", :class => "right"}
+          %th{:colspan => "4", :class => "right", :onclick => "showEnterGame()"}
             %a(title="Enter game") Enter game
         %tr
           %th{:scope => 'col'} Player

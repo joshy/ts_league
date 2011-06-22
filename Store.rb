@@ -6,8 +6,7 @@ class Store
   def initialize
     @db = Sequel.connect 'jdbc:postgresql://127.0.0.1:5432/ts_league', 
     :user=> 'joshy', :password =>'joshy'
-    ##init_database
-    @players = @db[:players]
+    init_database
   end
 
   def save(games)
@@ -25,12 +24,15 @@ class Store
   end
 
   def init_database
-    @db.create_table :players do
-      primary_key :id
-      String :short_name
-      Integer :games_won
-      Integer :games_played
+    if (!@db.table_exists?(:players))
+      @db.create_table :players do
+        primary_key :id
+        String :short_name
+        Integer :games_won
+        Integer :games_played
+      end
     end
+    @players = @db[:players]
   end
 
 end
